@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 from keras.models import load_model
 
-model = load_model('path/to/your/model.h5')
+model = load_model('trained_model.pkl')
 
  # Load the saved tokenizer (you should have saved it during training)
 with open('tokenizer.pkl', 'rb') as tokenizer_file:
