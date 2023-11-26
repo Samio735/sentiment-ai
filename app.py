@@ -8,13 +8,13 @@ from keras.preprocessing.text import Tokenizer
 app = Flask(__name__)
 
 
-# Load the saved model
-with open('trained_model.pkl', 'rb') as model_file:
-    model = pickle.load(model_file)
+from keras.models import load_model
 
-    # Load the saved tokenizer (you should have saved it during training)
-    with open('tokenizer.pkl', 'rb') as tokenizer_file:
-        tokenizer = pickle.load(tokenizer_file)
+model = load_model('path/to/your/model.h5')
+
+ # Load the saved tokenizer (you should have saved it during training)
+with open('tokenizer.pkl', 'rb') as tokenizer_file:
+    tokenizer = pickle.load(tokenizer_file)
     def predict_sentiment(input_phrase):
         input_phrase = input_phrase.lower()
         input_phrase = re.sub('[^a-zA-z0-9\s]', '', input_phrase)
