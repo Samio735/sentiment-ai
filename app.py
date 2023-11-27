@@ -8,9 +8,10 @@ from keras.preprocessing.text import Tokenizer
 app = Flask(__name__)
 
 
-from keras.models import load_model
+import joblib
 
-model = load_model('trained_model.pkl')
+model = joblib.load('path/to/your/model.pkl')
+
 
  # Load the saved tokenizer (you should have saved it during training)
 with open('tokenizer.pkl', 'rb') as tokenizer_file:
