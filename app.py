@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 import joblib
 
-model = joblib.load('path/to/your/model.pkl')
+model = joblib.load('trained_model.pkl')
 
 
  # Load the saved tokenizer (you should have saved it during training)
